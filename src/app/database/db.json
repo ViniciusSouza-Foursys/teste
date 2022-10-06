@@ -1,0 +1,17 @@
+{
+  "usuarios": [
+    {
+      "nome": "Vinicius Andretta",
+      "telefone": "3333333333",
+      "email": "vinicius",
+      "senha": "123",
+      "acesso": "Total",
+      "cep": "81670250",
+      "endereco": "Rua Doutor Danilo Gomes",
+      "bairro": "Boqueirão",
+      "cidade": "Curitiba",
+      "estado": "PR",
+      "id": 1
+    }
+  ]
+}

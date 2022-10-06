@@ -1,0 +1,31 @@
+<app-header></app-header>
+<div class=" content">
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Telefone</th>
+        <th scope="col">Endereço</th>
+        <th scope="col">E-mail</th>
+        <th scope="col">Senha</th>
+        <th scope="col">Acesso</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of usuarios">
+        <th scope="row">{{usuario.id}}</th>
+        <td>{{usuario.nome}}</td>
+        <td>{{usuario.telefone}}</td>
+        <td>{{usuario.endereco +' - '+ usuario.cidade + '/' + usuario.estado}}</td>
+        <td>{{usuario.email}}</td>
+        <td>{{usuario.senha}}</td>
+        <td>{{usuario.acesso}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<app-footer></app-footer>

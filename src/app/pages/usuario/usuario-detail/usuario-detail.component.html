@@ -1,0 +1,71 @@
+<app-header></app-header>
+<div class="content">
+
+  <h2>Editar usuário</h2>
+
+  <form [formGroup]="formUsuario" (ngSubmit)="goEditar()">
+    <div class="mb-3">
+      <input type="text" class="form-control" placeholder="Nome" aria-label="Nome" formControlName="nome">
+      <div *ngIf="formUsuario.get('nome')?.errors?.['required']&& formUsuario.get('nome')?.touched">
+        <small class="text-danger fw-bold fs-6">Campo obrigatório</small>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Telefone" aria-label="Telefone" formControlName="telefone">
+        <div *ngIf="formUsuario.get('telefone')?.errors?.['required']&& formUsuario.get('telefone')?.touched">
+          <small class="text-danger fw-bold fs-6">Campo obrigatório</small>
+        </div>
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="E-mail" aria-label="E-mail" formControlName="email">
+        <div *ngIf="formUsuario.get('email')?.errors?.['required']&& formUsuario.get('email')?.touched">
+          <small class="text-danger fw-bold fs-6">Campo obrigatório</small>
+        </div>
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Senha" aria-label="Senha" formControlName="senha">
+        <div *ngIf="formUsuario.get('senha')?.errors?.['required']&& formUsuario.get('senha')?.touched">
+          <small class="text-danger fw-bold fs-6">Campo obrigatório</small>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <select class="form-select" formControlName="acesso">
+          <option value="">Tipo acesso</option>
+          <option *ngFor="let acesso of userAcesso">{{acesso}}</option>
+        </select>
+        <div *ngIf="formUsuario.get('acesso')?.errors?.['required']&& formUsuario.get('acesso')?.touched">
+          <small class="text-danger fw-bold fs-6">Campo obrigatório</small>
+        </div>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-sm-2">
+        <input type="text" class="form-control" placeholder="CEP" aria-label="CEP" formControlName="cep" (blur)="goBuscarEndereco()">
+        <div *ngIf="formUsuario.get('cep')?.errors?.['required']&& formUsuario.get('cep')?.touched">
+          <small class="text-danger fw-bold fs-6">Campo obrigatório</small>
+        </div>
+        <span class="text-danger fw-bold fs-6" *ngIf="cepErro">CEP inválido</span>
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Endereço" aria-label="Endereço" formControlName="endereco">
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Bairro" aria-label="Bairro" formControlName="bairro">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Cidade" aria-label="Cidade" formControlName="cidade">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Estado" aria-label="Estado" formControlName="estado">
+      </div>
+    </div>
+    <button routerLink="/usuario" class="btn btn-secondary me-1">Voltar</button>
+    <button type="submit" class="btn btn-primary" [disabled]="!formUsuario.valid">Salvar</button>
+  </form>
+
+</div>
+<app-footer></app-footer>
+

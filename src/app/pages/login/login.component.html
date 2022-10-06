@@ -1,0 +1,22 @@
+<app-header></app-header>
+<div>
+  <main class="form-signin w-100 m-auto">
+    <form (ngSubmit)="goLogin()">
+      <img class="mb-4" src="../../../assets/logo-foursys2.png" alt="" width="100%" height="">
+      <h1 class="h3 mb-3 fw-normal">Sign in</h1>
+
+      <div class="form-floating">
+        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" [(ngModel)]="usuario" name="usuario">
+        <label for="floatingInput">E-mail</label>
+      </div>
+      <div class="form-floating">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Senha"[(ngModel)]="senha" name="senha">
+        <label for="floatingPassword">Senha</label>
+      </div>
+      <span class="text-danger">{{falhaLogin}}</span>
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Entrar</button>
+    </form>
+  </main>
+</div>
+
+<app-footer></app-footer>
